@@ -1,0 +1,86 @@
+//Talymonyuk zadanie 21
+#include <iostream>
+#include <string>
+int main() {
+int num1, num2, num3, num4;
+std::string A = "This is a sentence with some numbers 1 or 2 and 3 and 4"; 
+std::string B = "thanks";
+std::string C = "for";
+std::string D = "reading";
+std::string F = "code";
+A.resize( 55, ' ' );
+num1 = A.find("1");
+A.replace(num1, 1, B);
+num2 = A.find("2");
+A.replace(num2, 1, C);
+num3 = A.find("3");
+A.replace(num3, 1, D);
+num4 = A.find("4");
+A.replace(num4, 1, F);
+std::cout << A << std::endl;
+}
+/*Talymonyuk zadanie 3
+#include <iostream>
+#include <string>
+#include <vector>
+#include <array>
+int main(){
+    std::string txt;
+    int count = 0, point = 0;
+    std::getline(std::cin, txt);
+    for (int i=0; i < txt.length(); i++){
+        if (txt.at(i) != ' '){
+            if (count == 6){
+                point++;
+            }
+            count++;
+        } else {
+            count = 0;
+        }
+    }
+    std::cout<<"points:"<<point<<std::endl;
+}*/
+/*Talymonyuk zadanie 7
+#include <iostream>
+#include <string>
+int main(){
+    std::string txt;
+    int i = 0, count=0, max=0, j=0;
+    std::getline(std::cin, txt);
+    while(i < txt.length()){
+        if (txt.at(i) != ' ') {
+            count++;
+            if (count > max){
+            max = count;
+                j = i+1 ;
+            }
+        } else {
+            count = 0;
+        }
+        i++;
+    }
+        i = i - j;
+        while (i < max){
+            std::cout<<txt.at(i);
+        i++;
+        }
+        std::cout<<'\n';
+}*/
+/*Talymonyuk zadanie 16
+#include <iostream>
+#include <string>
+int main(){
+    std::string txt;
+    std::getline(std::cin,txt);
+    int i = 0, count = 0;
+    char check;
+    while (i<txt.length()){
+        check = txt.at(i);
+        if (check == '0' || check == '1' || check == '2' || check == '3' || check == '4' || check == '5' || check == '6' || check == '7' || check == '8' || check == '9'){
+            count++;
+        }
+        i++;
+    }
+    std::cout<<"chislo:"<<count<<'\n';
+
+}*/
