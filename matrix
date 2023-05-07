@@ -1,0 +1,184 @@
+//Talymonyuk zadanie 3
+/*#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Введите размерность матрицы: ";
+    cin >> n;
+
+    int matrix[n][n];
+    cout << "Введите элементы матрицы:\n";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
+        if (matrix[i][i] < 0) {
+            sum += matrix[i][i];
+        }
+    }
+
+    cout << "Сумма отрицательных элементов на главной диагонали: " << sum << endl;
+
+    return 0;
+}*/
+//Talymonyuk zadanie 6
+/*
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Введите размерность матрицы: ";
+    cin >> n;
+
+    int matrix[n][n];
+    cout << "Введите элементы матрицы:\n";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+
+    int max_elements[n];
+    for (int i = 0; i < n; i++) {
+        int max_elem = matrix[i][0];
+        for (int j = 1; j < n; j++) {
+            if (matrix[i][j] > max_elem) {
+                max_elem = matrix[i][j];
+            }
+        }
+        max_elements[i] = max_elem;
+    }
+
+    cout << "Массив максимальных элементов строк матрицы: ";
+    for (int i = 0; i < n; i++) {
+        cout << max_elements[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}*/
+//Talymonyuk zadanie 7
+/*
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Введите размерность матрицы: ";
+    cin >> n;
+
+    int matrix[2][n];
+    cout << "Введите количество осадков и силу ветра за каждый день:\n";
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < n; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+
+    int max_wind = matrix[1][0];
+    int rainy_day = 0;
+    for (int i = 1; i < n; i++) {
+        if (matrix[1][i] > max_wind) {
+            max_wind = matrix[1][i];
+            rainy_day = i;
+        }
+    }
+
+    bool hurricane = true;
+    for (int i = 0; i < n; i++) {
+        if (i != rainy_day && matrix[1][i] >= max_wind && matrix[0][i] > matrix[0][rainy_day]) {
+            hurricane = false;
+            break;
+        }
+    }
+
+    if (hurricane) {
+        cout << "Был ураган\n";
+    } else {
+        cout << "Урагана не было\n";
+    }
+
+    return 0;
+}*/
+//Talymonyuk zadanie 9a
+/*#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Введите размерность матрицы: ";
+    cin >> n;
+
+    int matrix[3][n];
+    cout << "Введите яркость цветовых каналов для каждого пикселя:\n";
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < n; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+
+    cout << "Матрица пикселей:\n";
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}*/
+//Talymonyuk zadanie 10(3)
+/*#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Введите размерность матрицы: ";
+    cin >> n;
+
+    int matrix[n][n];
+    cout << "Введите элементы матрицы:\n";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
+        if (matrix[i][i] < 0) {
+            sum += matrix[i][i];
+        }
+    }
+    cout << "Сумма отрицательных элементов на главной диагонали: " << sum << endl;
+
+    double norm1 = 0, normInf = 0;
+    for (int i = 0; i < n; i++) {
+        double rowSum = 0, colSum = 0;
+        for (int j = 0; j < n; j++) {
+            rowSum += abs(matrix[i][j]);
+            colSum += abs(matrix[j][i]);
+        }
+        norm1 = max(norm1, rowSum);
+        normInf = max(normInf, colSum);
+    }
+    cout << "Матричная норма ||A||1: " << norm1 << endl;
+    cout << "Матричная норма ||A||inf: " << normInf << endl;
+
+    return 0;
+}*/
+
+
+
+
+
+
+
+
