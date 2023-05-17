@@ -1,0 +1,107 @@
+/*
+//Talymonyuk zadanie 6
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    ifstream file("flight_data.txt");
+    string line;
+    
+    int x = 0;
+    int y = 0;
+    int command = 0;
+    
+    while (getline(file, line)) {
+        sscanf(line.c_str(), "%d,%d,%d", &x, &y, &command);
+        
+        if (command == 10) {
+            cout << "Квадрокоптер взлетает на координатах (" << x << ", " << y << ")" << endl;
+        } else if (command == 20) {
+            cout << "Квадрокоптер садится на координатах (" << x << ", " << y << ")" << endl;
+        } else if (command == 50) {
+            cout << "Квадрокоптер летит на координатах (" << x << ", " << y << ")" << endl;
+        } else if (command == 60) {
+            cout << "Квадрокоптер набирает высоту на координатах (" << x << ", " << y << ")" << endl;
+        } else if (command == 70) {
+            cout << "Квадрокоптер снижает высоту на координатах (" << x << ", " << y << ")" << endl;
+        } else {
+            cout << "Неизвестная команда " << command << " на координатах (" << x << ", " << y << ")" << endl;
+        }
+    }
+    
+    file.close();
+    
+    return 0;
+}*/
+
+/*
+//Talymonyuk zadanie 3C
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+double func(double x, double param) {
+    double sum = 0;
+    for (int i = 2; i <= param; i++) {
+        sum += 1.0 / (i * x);
+    }
+    return 0.5 * x + 0.25 * x + sum;
+}
+
+int main() {
+    ifstream inFile("in.txt");
+    ofstream outFile("out.txt");
+
+    double x0 = 0;
+    double x1 = 0;
+    double step = 0;
+    double param = 0;
+    
+    inFile >> x0 >> x1 >> step >> param;
+    
+    for (double x = x0; x <= x1; x += step) {
+        double y = func(x, param);
+        outFile << x << ", " << y << endl;
+    }
+    
+    inFile.close();
+    outFile.close();
+    
+    return 0;
+}*/
+
+/*
+//Talymonyuk zadanie 1c
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    ifstream inFile("sevgu1.png", ios::binary);
+    
+    char signature[8];
+    inFile.read(signature, 8);
+    cout << "PNG signature: ";
+    for (int i = 0; i < 8; i++) {
+        cout << hex << (int)signature[i];
+    }
+    cout << endl;
+    
+    char ihdr[25];
+    inFile.seekg(12);
+    inFile.read(ihdr, 25);
+    cout << "IHDR Chunk: ";
+    for (int i = 0; i < 25; i++) {
+        cout << hex << (int)ihdr[i];
+    }
+    cout << endl;
+    
+    inFile.close();
+    
+    return 0;
+}*/
