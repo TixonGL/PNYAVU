@@ -1,0 +1,153 @@
+/*
+//Talymonyuk zadanie 1 variant 3
+//Объявить указатели на две переменные указанного типа. Используя указатели
+//произвести операции сложения и вычитания над переменными. Вывести адреса
+//указателей. Типы переменных указаны в таблице.(int)
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 10, b = 5;
+    int *ptr1 = &a, *ptr2 = &b;
+    
+    cout << "Addresses of pointers: " << ptr1 << " " << ptr2 << endl;
+    
+    int sum = *ptr1 + *ptr2;
+    int diff = *ptr1 - *ptr2;
+    
+    cout << "Sum: " << sum << endl;
+    cout << "Difference: " << diff << endl;
+    
+    return 0;
+}*/
+
+/*
+//Talymonyuk zadanie 2 variant 3
+//Написать функцию для обмена значений переменных, указанных выше. Передача по
+//указателю. Выполнить программу по шагам и выписать в тетрадь адреса указателей
+//и величины переменных.
+#include <iostream>
+using namespace std;
+
+void swap(int *ptr1, int *ptr2) {
+    int temp = *ptr1;
+    *ptr1 = *ptr2;
+    *ptr2 = temp;
+}
+
+int main() {
+    int a = 10, b = 5;
+    int *ptr1 = &a, *ptr2 = &b;
+    
+    cout << "Addresses of pointers: " << ptr1 << " " << ptr2 << endl;
+    cout << "Values of variables before swapping: " << a << " " << b << endl;
+    
+    swap(ptr1, ptr2);
+    
+    cout << "Values of variables after swapping: " << a << " " << b << endl;
+    
+    return 0;
+}*/
+
+/*
+//Talymonyuk zadanie 3 variant 3
+//Объявить динамический массив. Размер массива задаёт пользователь. Заполнить
+//массив случайными числами. Вывести на экран адреса и значения элементов
+//массива. 
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    int size;
+    cout << "Enter the size of the array: ";
+    cin >> size;
+    
+    int *arr = new int[size];
+    
+    srand(time(NULL));
+    
+    for (int i = 0; i < size; i++) {
+        arr[i] = rand() % 100;
+    }
+    
+    for (int i = 0; i < size; i++) {
+        cout << "Address of element " << i << ": " << &arr[i] << endl;
+        cout << "Value of element " << i << ": " << arr[i] << endl;
+    }
+    
+    delete[] arr;
+    
+    return 0;
+}*/
+
+/*
+//Talymonyuk zadanie 4c variant 3
+//Объявить сущность и описать её свойства. Объявить динамический массив
+//сущностей. Реализовать функцию, которая изменяет значения элемента (структура)
+//массива. Заполнить атрибуты числовыми и текстовыми значениями (диапазон
+//значений определить самостоятельно).(цветок)
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Flower {
+    string name;
+    string color;
+    int petals;
+    bool hasThorns;
+};
+
+void changeFlower(Flower* f, string newName, string newColor, int newPetals, bool newThorns) {
+    f->name = newName;
+    f->color = newColor;
+    f->petals = newPetals;
+    f->hasThorns = newThorns;
+}
+
+int main() {
+    int size;
+    cout << "Enter the size of the array: ";
+    cin >> size;
+    
+    Flower *arr = new Flower[size];
+    
+    for (int i = 0; i < size; i++) {
+        arr[i].name = "Rose";
+        arr[i].color = "Red";
+        arr[i].petals = i + 5;
+        arr[i].hasThorns = true;
+    }
+    
+    for (int i = 0; i < size; i++) {
+        cout << "Name: " << arr[i].name << endl;
+        cout << "Color: " << arr[i].color << endl;
+        cout << "Number of petals: " << arr[i].petals << endl;
+        cout << "Has thorns: " << (arr[i].hasThorns ? "Yes" : "No") << endl;
+    }
+    
+    changeFlower(&arr[0], "Tulip", "Yellow", 6, false);
+    
+    cout << "\nAfter changing the first flower:\n\n";
+    
+    for (int i = 0; i < size; i++) {
+        cout << "Name: " << arr[i].name << endl;
+        cout << "Color: " << arr[i].color << endl;
+        cout << "Number of petals: " << arr[i].petals << endl;
+        cout << "Has thorns: " << (arr[i].hasThorns ? "Yes" : "No") << endl;
+    }
+    
+    delete[] arr;
+    
+    return 0;
+}*/
+
+
+
+
+
+
+
+
+
